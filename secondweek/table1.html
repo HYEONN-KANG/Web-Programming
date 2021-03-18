@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>인터넷 프로그래밍 테이블</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>1열</th>
+            <th>2열</th>
+            <th>3열</th>
+        </tr>
+        <tr>
+            <td rowspan="2">1행 1열</td>
+            <!--셀병합은 왼쪽 위 기준!-->
+            <td rowspan="2" colspan="2">1행 2열</td>
+            <!--자동으로 정렬되서 보일때는 3행짜리인데 코드 상
+            구조로는 4행짜리입니다.-->
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td colspan="3">3행 1열</td>
+        </tr>
+    </table>
+</body>
+
+</html>

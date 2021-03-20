@@ -1,0 +1,17 @@
+h1, p{
+    font-family: serif;
+    color: black;
+}
+/*중복적용의 경우 아래쪽의 우선순위가 더 높다.*/
+h1{
+    border-bottom: 1px solid gray;
+    color: red;
+}
+
+body{
+    background-color: yellow;
+}
+
+h2{
+    color: red;
+}

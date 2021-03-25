@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>두 수의 연산</h3>
+    <hr>
+    <script>
+        var x = prompt("첫번째 수를 입력해주세요", 0);
+        x = parseInt(x);
+        var y = prompt("두번째 숫자를 입력해주세요", 0);
+        y = parseInt(y);
+        if (isNaN(x) || isNaN(y)) {
+            alert("입력이 잘못되었습니다.");
+        } else {
+            document.write("x + y: " + (x + y) + "<br>");
+            document.write("x - y: " + (x - y) + "<br>");
+            document.write("x * y: " + (x * y) + "<br>");
+            document.write("x == y: " + (x == y) + "<br>");
+            document.write("x != y: " + (x != y) + "<br>");
+            document.write("x >= y: " + (x >= y) + "<br>");
+            document.write("x > y: " + (x > y) + "<br>");
+            document.write("x <= y: " + (x <= y) + "<br>");
+            document.write("x < y: " + (x < y) + "<br>");
+        }
+    </script>
+</body>
+
+</html>

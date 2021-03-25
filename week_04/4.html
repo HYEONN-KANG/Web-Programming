@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var degree = prompt("섭씨온도를 입력해주세요", 0);
+        if (degree == null) {
+            // 취소버튼이나 다이얼로그를 닫은 경우
+            document.write("입력을 취소하셨습니다.");
+        } else if (degree == "") {
+            // 문자열 입력 없이 확인 버튼 누른 경우
+            document.write("아무것도 입력하지 않으셨습니다.");
+        } else {
+            var answer = parseInt(degree);
+            answer = (answer * 9 / 5) + 32;
+            document.write("입력하신 섭씨온도: " + degree + "<br> >> 화씨온도: " + answer);
+        }
+    </script>
+</body>
+
+</html>

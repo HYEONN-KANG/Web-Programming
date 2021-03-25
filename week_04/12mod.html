@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>두 수의 연산</h3>
+    <hr>
+    <script>
+        var num = prompt("정수를 하나 입력하세요", 0);
+        num = parseInt(num);
+
+        if (isNaN(num)) {
+            alert("입력이 잘못되었습니다.");
+        } else {
+            for (var i = 2; i <= 20; i++) {
+                document.write("제수가 " + i + "일 때" + "<br>");
+                document.write("몫: " + parseInt(num / i) + "<br>");
+                document.write("나머지: " + num % i + "<br>");
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

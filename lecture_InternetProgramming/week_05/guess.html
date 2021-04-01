@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        var solution = 78;
+        var i = 0;
+
+        function guess() {
+            i++;
+            document.getElementById("times").value = i;
+            try {
+                var x = document.getElementById("num").value;
+                if (x == "") throw "no input";
+                else if (x < solution) throw "its smaller";
+                else if (x > solution) throw "its biger";
+                else throw "correct!";
+            } catch (error) {
+                document.getElementById("message").value = error;
+                document.getElementById("times").value = i;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>숫자 맞추기 게임</h1>
+    숫자: <input type="text" id="num">
+    <button type="button" onclick="guess()">확인</button>
+    추측횟수: <input type="text" id="times">
+    힌트: <input type="text" id="message">
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>덧셈 게임 구현</title>
+    <script>
+        function solve() {
+            if (document.getElementById("answer").value == 60)
+                alert("correct!");
+            else
+                alert("Wrong answer!");
+        }
+    </script>
+</head>
+
+<body>
+    <h3>덧셈 결과를 입력하고 확인을 눌러보세요!</h3>
+    20 + 40 =
+    덧셈 결과: <input type="text" id="answer">
+    <input type="button" onclick="solve()" value="check">
+</body>
+
+</html>

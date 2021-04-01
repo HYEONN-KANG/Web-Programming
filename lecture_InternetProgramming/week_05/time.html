@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        function setClock() {
+            var now = new Date();
+            var s = "현재 시간: " + now.getHours() + ":" + now.getMinutes() +
+                ":" + now.getSeconds() + "<br>";
+            document.getElementById("clock").innerHTML = s;
+            if (now.getHours() < 12)
+                document.body.style.color = "lightskyblue";
+            else
+                document.body.style.color = "orange";
+            setTimeout("setClock()", 1000);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>오전이면 lightskyblue, 오후이면 orange 배경</h3>
+    <hr>
+    <div id="clock"></div>
+    <script>
+        setClock();
+    </script>
+</body>
+
+</html>

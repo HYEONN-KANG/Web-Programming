@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+    <script>
+        var str = "100, 1000 or 1000?";
+        var patt1 = /\d{3,4}/g; // 3~4자리 숫자 찾기
+        document.write(str.match(patt1), "<br>"); // 100, 1000, 1000
+
+        var str = "Mr Blue has a blue house and a blue car";
+        var res1 = str.replace(/blue/g, "red");
+        document.write(res1, "<br>");
+
+        var patt2 = /blue/g;
+        var res2 = patt2.exec(str);
+        document.write(res2, "<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

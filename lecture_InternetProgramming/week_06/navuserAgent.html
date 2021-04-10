@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹브라우저 구별</title>
+    <script>
+        function showBrowser() {
+            var agent = navigator.userAgent.toLowerCase();
+
+            if (agent.search("msie") != -1 || agent.search("trident") != -1 ||
+                agent.search("edge") != -1) {
+                if (agent.search("msie") != -1) {
+                    browser = "Internet Explorer 10 이하";
+                } else {
+                    if (agent.search("trident") != -1)
+                        browser = "IE 11";
+                    if (agent.search("edge") != -1)
+                        browser = "MS Edge";
+                }
+            } else if (agent.search("safari") != -1) {
+                if (agent.search("opr") != -1)
+                    browser = "Opera";
+                else if (agent.search("chrome") != -1)
+                    browser = "Google Chrome";
+                else browser = "Apple Safari";
+            } else if (agent.search("firefox") != -1)
+                browser = "Firefox";
+            alert("당신의 브라우저는 " + browser + "입니다.");
+            document.write(agent, "<br>");
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="showBrowser()">브라우저 판별</button>
+</body>
+
+</html>

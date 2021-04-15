@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>입력양식 결과값</title>
+	<style>
+		table {
+			border-collapse: collapse
+		}
+
+		table th {
+			background-color: lightgray
+		}
+	</style>
+	<script>
+		/*
+ *1. 사용자가 입력한 모든 값을 alert 경고창에 출력하시오.
+     아이디는 반드시 입력되어야 하며, 영문소문자로 시작하는 4~8자 영문자 또는 숫자이어야 합니다.
+ */
+		function showUserData() {
+			var obj = document.getElementById("myId");
+			var patt = /^[a-z]+[a-z0-9]{3,7}$/g;
+			if (obj.value.length == 0) {
+				alert("아이디를 입력하세요.");
+				obj.focus();
+				return false;
+			} else if (!patt.test(obj.value)) {
+				alert("아이디는 영문소문자로 시작하는 4~8자리의 영문소문자 또는 숫자여야 합니다.");
+				obj.focus();
+				return false;
+			}
+			var str = "";
+			str = "id : " + obj.value + "\n";
+
+			obj = document.getElementById("myPwd");
+			str += "pwd : " + obj.value + "\n";
+
+			obj = document.getElementsByName("myChk");
+			var temp = "";
+			for (idx in obj) {
+				if (obj[idx].checked)
+					temp += obj[idx].value + ",";
+			}
+			str += "checkbox checked : " + temp + "\n";
+
+			obj = document.getElementsByName("myRadio");
+			var temp = "";
+			for (idx in obj) {
+				if (obj[idx].checked)
+					temp += obj[idx].value + ",";
+			}
+			str += "radio checked : " + temp + "\n";
+
+			obj = document.getElementById("mySel");
+			str += "selected option : " + obj.value + "\n";
+
+			obj = document.getElementById("myDate");
+			str += "Date : " + obj.value + "\n";
+
+			obj = document.getElementById("myColor");
+			str += "Color : " + obj.value + "\n";
+
+			alert(str);
+		}
+	</script>
+</head>
+
+<body>
+	<form action="#" method="post" onsubmit="return showUserData()">
+		<table border="1">
+			<tr>
+				<th>아이디</th>
+				<td><input type="text" id="myId" name="myId"></td>
+			</tr>
+			<tr>
+				<th>암호</th>
+				<td><input type="password" id="myPwd" name="myPwd"></td>
+			</tr>
+			<tr>
+				<th>checkbox 선택</th>
+				<td>
+					<input type="checkbox" name="myChk" value="체크1">체크1
+					<input type="checkbox" name="myChk" value="체크2">체크2
+					<input type="checkbox" name="myChk" value="체크3">체크3
+				</td>
+			</tr>
+			<tr>
+				<th>radio 선택</th>
+				<td>
+					<input type="radio" name="myRadio" value="라디오1">라디오1
+					<input type="radio" name="myRadio" value="라디오2">라디오2
+					<input type="radio" name="myRadio" value="라디오3">라디오3
+				</td>
+			</tr>
+			<tr>
+				<th>선택목록</th>
+				<td>
+					<select id="mySel" name="mySel">
+						<option value="목록1">목록1</option>
+						<option value="목록2">목록2</option>
+						<option value="목록3">목록3</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>날짜</th>
+				<td><input type="date" id="myDate" name="myDate"></td>
+			</tr>
+			<tr>
+				<th>색깔</th>
+				<td><input type="color" id="myColor" name="myColor"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center">
+					<input type="submit" value="전송">
+					<input type="reset" value="취소">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
